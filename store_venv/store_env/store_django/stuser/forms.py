@@ -11,7 +11,7 @@ class RegisterForm(forms.Form):
     )
     password = forms.CharField(
         error_messages={
-                'required': '비밀번호를 입력해주세요'
+            'required': '비밀번호를 입력해주세요'
             },
         widget=forms.PasswordInput, label='비밀번호'
     )
@@ -62,7 +62,7 @@ class LoginForm(forms.Form):
             try:
                 stuser = Stuser.objects.get(email=email)
             except Stuser.DoesNotExist:
-                self.add_error('email', '아이디가 없습니다')
+                self.add_error('username', '아이디가 없습니다')
                 return
                 
             if not check_password(password, stuser.password):

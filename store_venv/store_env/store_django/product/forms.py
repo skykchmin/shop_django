@@ -8,7 +8,7 @@ class RegisterForm(forms.Form):
         },
         max_length=64, label='상품명'
     )
-    price = forms.EmailField(
+    price = forms.IntegerField(
         error_messages={
             'required: 상품가격을 입력해주세요'
         }, label='상품가격'
