@@ -2,7 +2,7 @@ from django import forms
 from .models import Product
 
 class RegisterForm(forms.Form):
-    name = forms.EmailField(
+    name = forms.CharField(
         error_messages={
             'required' : '상품명을 입력해주세요'
         },
@@ -23,6 +23,8 @@ class RegisterForm(forms.Form):
             'required' : '재고를 입력해주세요.'
         }, label='재고'
     )
+
+#################################
 
     def clean(self):
         cleaned_data = super().clean()
