@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from .models import Product
 
 # from django.views.generic import FormView
@@ -19,3 +19,10 @@ class ProductList(ListView):
     # template_name = 'register_product.html'
     # form_class = RegisterForm
     # success_url = '/product'
+
+class ProductDetail(DetailView):
+    template_name = 'product_detail.html'
+    queryset = Product.objects.all() # 어떤 모델을 지정하는게 아니라 쿼리셋을 지정
+    context_object_name = 'product'
+    
+    
