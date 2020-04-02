@@ -12,7 +12,6 @@ class RegisterForm(forms.Form):
             'required: 상품설명을 입력해주세요'
         }, label='상품설명', widget = forms.HiddenInput
     )
-
     def clean(self):
         cleaned_data = super().clean()
      
