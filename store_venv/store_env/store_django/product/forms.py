@@ -24,8 +24,6 @@ class RegisterForm(forms.Form):
         }, label='재고'
     )
 
-#################################
-
     def clean(self):
         cleaned_data = super().clean()
         name = cleaned_data.get('name')
