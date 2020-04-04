@@ -27,5 +27,5 @@ class ProductDetail(DetailView):
     
     def get_context_data(self, **kwangs): # detailform 에 전달되는 게 필요, 내가 원하는 데이터를 집어넣을 수 있게
         context = super().get_context_data(**kwangs) # 먼저 디테일 view가 원하는 것을 만든 다음
-        context['form'] = OrderForm()
+        context['form'] = OrderForm(self.request) #request를 전달할 수 있게
         return context
