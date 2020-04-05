@@ -2,8 +2,8 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from .models import Product
 from order.forms import RegisterForm as OrderForm
-# from django.views.generic import FormView
-# from .forms import RegisterForm
+from django.views.generic import FormView
+from .forms import RegisterForm
 # Create your views here.
 
 class ProductList(ListView):
@@ -11,14 +11,14 @@ class ProductList(ListView):
     template_name = 'product.html'
     context_object_name = 'product_list'
 
-# class ProductCreate(FormView):
-#     model = Product
-#     template_name = 'product.html'
-#     context_object_name = 'product_list'
+class ProductCreate(FormView):
+    model = Product
+    template_name = 'product.html'
+    context_object_name = 'product_list'
 
-    # template_name = 'register_product.html'
-    # form_class = RegisterForm
-    # success_url = '/product'
+    template_name = 'register_product.html'
+    form_class = RegisterForm
+    success_url = '/product'
 
 class ProductDetail(DetailView):
     template_name = 'product_detail.html'
