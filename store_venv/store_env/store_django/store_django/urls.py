@@ -20,12 +20,21 @@ from product.views import ProductList, ProductCreate, ProductDetail
 from order.views import OrderCreate
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', index),
-    path('register/', RegisterView.as_view()),
-    path('login/', LoginView.as_view()),
-    path('product/', ProductList.as_view()),
-    path('product/<int:pk>/', ProductDetail.as_view()),
-    path('product/create/', ProductCreate.as_view()),
-    path('order/create/', OrderCreate.as_view()),
+    path('admin/', admin.site.urls, name='admin'),
+    path('', index, name='index'),
+    path('register/', RegisterView.as_view(), name='register'),
+    path('login/', LoginView.as_view(), name='login'),
+    path('product/', ProductList.as_view(), name='product'),
+    path('product/<int:pk>/', ProductDetail.as_view(), name='productdetail'),
+    path('product/create/', ProductCreate.as_view(), name='productcreate'),
+    path('order/create/', OrderCreate.as_view(), name='ordercreate'),
 ]
+
+#  path('admin/', admin.site.urls),
+#     path('', index),
+#     path('register/', RegisterView.as_view()),
+#     path('login/', LoginView.as_view()),
+#     path('product/', ProductList.as_view()),
+#     path('product/<int:pk>/', ProductDetail.as_view()),
+#     path('product/create/', ProductCreate.as_view()),
+#     path('order/create/', OrderCreate.as_view()),
